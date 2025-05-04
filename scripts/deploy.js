@@ -2,8 +2,8 @@ const hre = require("hardhat");
 
 async function main() {
   const initialSupply = 1000000 * 10 ** 6; // Example: 1,000,000 tokens with 6 decimals
-  const tokenName = "MyAmoyUSDt";
-  const tokenSymbol = "MAUSDT";
+  const tokenName = "USDt-KPI";
+  const tokenSymbol = "USDTKPI";
   const decimals = 6;
 
   const TetherToken = await hre.ethers.getContractFactory("TetherToken");
