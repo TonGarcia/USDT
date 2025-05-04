@@ -8,10 +8,9 @@ async function main() {
 
   const TetherToken = await hre.ethers.getContractFactory("TetherToken");
   const tetherToken = await TetherToken.deploy(initialSupply, tokenName, tokenSymbol, decimals);
+  await tetherToken.waitForDeployment();
 
-  await tetherToken.deployed();
-
-  console.log("TetherToken deployed to:", tetherToken.address);
+  console.log("TetherToken deployed to:", await tetherToken.getAddress());
 }
 
 main().catch((error) => {
